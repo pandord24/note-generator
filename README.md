@@ -1,2 +1,1 @@
-# note-generator
-A note-taking application
+# Note Taker Starter Code
