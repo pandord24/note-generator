@@ -13,7 +13,7 @@ router.post("/notes", (req, res) => {
     }).catch((error) => res.status(500).json(error))
 })
 
-router.delete("/note/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
     store.removeNotes(req.params.id).then(() => {
     return res.status(200).json({ delete: true, id: req.params.id})
     }).catch((error) => res.status(500).json(error))

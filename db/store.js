@@ -22,7 +22,7 @@ class Store {
         return this.read().then((notes) => {
             let parsedNotes;
             try {
-                parseNotes = [].concat(JSON.parse(notes))
+                parsedNotes = [].concat(JSON.parse(notes))
 
             } catch(error) {
                 parsedNotes = []
@@ -32,7 +32,7 @@ class Store {
     }
 
     addNotes(note) {
-        const { title, text } =notes
+        const { title, text } =note
         
         if(!title || !text) {
             throw new Error("Title and Text cannot be blank")
@@ -41,7 +41,7 @@ class Store {
         const newNote = { title, text, id: uuidv4()}
 
         return this.getNotes().then((notes) => [...notes,newNote])
-        .then((updatedNotes) => this.write(updateNotes))
+        .then((updateNotes) => this.write(updateNotes))
         .then(() => newNote);
 
     }
